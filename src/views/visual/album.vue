@@ -74,7 +74,7 @@ export default {
   data: () => ({
     glide: null,
   }),
-  mounted() {
+  mounted () {
     this.glide = new Glide('.exhibition__glide', {
       type: 'carousel',
       perView: 1,
@@ -130,11 +130,13 @@ export default {
   overflow: hidden;
   position: relative;
   > img {
-    height: 100%;
+    // height: 100%;
+    width: 100%;
     display: block;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    margin: auto;
   }
 }
 .exhibition__textArea {
@@ -154,7 +156,8 @@ export default {
   .slide__content {
     height: 480px;
     > img {
-      height: 100%;
+      width: 100%;
+      margin: auto;
     }
   }
   .exhibition__glide {

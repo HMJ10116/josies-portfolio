@@ -5,27 +5,27 @@
         <ul class="glide__slides">
           <li class="glide__slide">
             <div class="slide__content">
-              <img src="@/assets/business/1.png" />
+              <img class="content__image content__image--1" src="@/assets/business/1.png" />
             </div>
           </li>
           <li class="glide__slide">
             <div class="slide__content">
-              <img src="@/assets/business/2.png" />
+              <img class="content__image content__image--2" src="@/assets/business/2.png" />
             </div>
           </li>
           <li class="glide__slide">
             <div class="slide__content">
-              <img src="@/assets/business/3.png" />
+              <img class="content__image content__image--3" src="@/assets/business/3.png" />
             </div>
           </li>
           <li class="glide__slide">
             <div class="slide__content">
-              <img src="@/assets/business/4.png" />
+              <img class="content__image content__image--4" src="@/assets/business/4.png" />
             </div>
           </li>
           <li class="glide__slide">
             <div class="slide__content">
-              <img src="@/assets/business/5.png" />
+              <img class="content__image content__image--5" src="@/assets/business/5.png" />
             </div>
           </li>
         </ul>
@@ -53,7 +53,7 @@ export default {
   data: () => ({
     glide: null,
   }),
-  mounted() {
+  mounted () {
     this.glide = new Glide('.exhibition__glide', {
       type: 'carousel',
       perView: 1,
@@ -81,7 +81,6 @@ export default {
     .control__button {
       height: 75px;
       font-size: 12px;
-      
       background-color: #606060;
       color: white;
       position: absolute;
@@ -109,21 +108,19 @@ export default {
   max-width: 100vw;
   overflow: hidden;
   position: relative;
-  > img {
-    height: 100%;
+  .content__image {
+    width: 100%;
     display: block;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    margin: auto;
   }
 }
 .exhibition__textArea {
   font-size: 12px;
   text-align: left;
   color: #979797;
-  .textArea__description {
-    // margin: 0px;
-  }
   .textArea__description--mb0 {
     margin-bottom: 0;
   }
@@ -133,8 +130,10 @@ export default {
 @media screen and (min-width: 768px) {
   .slide__content {
     height: 480px;
-    > img {
-      height: 100%;
+    .content__image {
+      width: 100%;
+      height: unset;
+      margin: auto;
     }
   }
   .exhibition__glide {

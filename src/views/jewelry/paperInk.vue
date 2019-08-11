@@ -5,27 +5,27 @@
         <ul class="glide__slides">
           <li class="glide__slide">
             <div class="slide__content">
-              <img src="@/assets/jewelry/paperInk1.png" />
+              <img class="content__image content__image--1" src="@/assets/jewelry/paperInk1.png" />
             </div>
           </li>
           <li class="glide__slide">
             <div class="slide__content">
-              <img src="@/assets/jewelry/paperInk2.png" />
+              <img class="content__image" src="@/assets/jewelry/paperInk2.png" />
             </div>
           </li>
           <li class="glide__slide">
             <div class="slide__content">
-              <img src="@/assets/jewelry/paperInk3.png" />
+              <img class="content__image" src="@/assets/jewelry/paperInk3.png" />
             </div>
           </li>
           <li class="glide__slide">
             <div class="slide__content">
-              <img src="@/assets/jewelry/paperInk4.png" />
+              <img class="content__image" src="@/assets/jewelry/paperInk4.png" />
             </div>
           </li>
           <li class="glide__slide">
             <div class="slide__content">
-              <img src="@/assets/jewelry/paperInk5.png" />
+              <img class="content__image" src="@/assets/jewelry/paperInk5.png" />
             </div>
           </li>
         </ul>
@@ -52,7 +52,7 @@ export default {
   data: () => ({
     glide: null,
   }),
-  mounted() {
+  mounted () {
     this.glide = new Glide('.jewelry__glide', {
       type: 'carousel',
       perView: 1,
@@ -80,7 +80,6 @@ export default {
     .control__button {
       height: 75px;
       font-size: 12px;
-      
       background-color: #606060;
       color: white;
       position: absolute;
@@ -108,12 +107,17 @@ export default {
   max-width: 100vw;
   overflow: hidden;
   position: relative;
-  > img {
+  .content__image {
     height: 100%;
+    margin: auto;
     display: block;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+  }
+  .content__image--1 {
+    width: 100%;
+    height: unset;
   }
 }
 .jewelry__textArea {
@@ -132,9 +136,10 @@ export default {
 @media screen and (min-width: 768px) {
   .slide__content {
     height: 480px;
-    > img {
-      height: 100%;
-    }
+  //     .content__image--1 {
+  //   width: 100%;
+  //   height: unset;
+  // }
   }
   .jewelry__glide {
     position: relative;

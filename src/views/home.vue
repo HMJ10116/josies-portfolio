@@ -332,5 +332,36 @@
   .home__bannerGroup--2 {
     grid-template-columns: 9fr 9fr 5fr;
   }
+  .home__jewelryGroup {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: unset;
+    // grid-template-areas:
+      // "birdSong  snake jewelryDesign"
+      // "diff  flowerDance paperInk";
+    // grid-column-gap: 32px;
+    .jewelryGroup__jewelry{
+      margin-top: 22px;
+    }
+    .jewelryGroup__jewelry--birdSong{
+      width: 48%;
+    }
+    .jewelryGroup__jewelry--snake{
+      width: 20%;
+    }
+    .jewelryGroup__jewelry--jewelryDesign{
+      width: 24%;
+    }
+     .jewelryGroup__jewelry--diff{
+      width: 23%;
+    }
+     .jewelryGroup__jewelry--flowerDance{
+      width: 23%;
+    }
+     .jewelryGroup__jewelry--paperInk{
+      width: 46%;
+    }
+  }
 }
 </style>
