@@ -343,6 +343,7 @@
     // grid-column-gap: 32px;
     .jewelryGroup__jewelry{
       margin-top: 22px;
+      height: 100%;
     }
     .jewelryGroup__jewelry--birdSong{
       width: 48%;
