@@ -49,7 +49,7 @@
     <div class="home__bannerGroup home__bannerGroup--2">
       <img class="home__banner home__banner--mt16" src="@/assets/album/1.png" />
       <img class="home__banner home__banner--mt16" src="@/assets/business/1.png" />
-      <img class="home__banner home__banner--chair home__banner--mt16" src="@/assets/chair/1.png" />
+      <img class="home__banner home__banner--mt16" src="@/assets/chair/1.png" />
     </div>
     <div class="home___vl"></div>
     <h1 class="home__header">04金工珠寶設計</h1>
@@ -317,13 +317,8 @@
     grid-column-gap: 15px;
     margin-top: 75px;
     .home__banner {
-      // width: 360px;
       margin: 0 5px;
       display: block;
-    }
-    .home__banner--chair {
-      // max-height: 247px;
-      height: 100%;
     }
   }
   .home__bannerGroup--1 {
@@ -337,10 +332,6 @@
     flex-wrap: wrap;
     justify-content: space-between;
     max-width: unset;
-    // grid-template-areas:
-      // "birdSong  snake jewelryDesign"
-      // "diff  flowerDance paperInk";
-    // grid-column-gap: 32px;
     .jewelryGroup__jewelry{
       margin-top: 22px;
       height: 100%;
