@@ -6,20 +6,19 @@
     </div>
     <p
       class="about__paragraph"
-    >擁有多元的經歷，學習設計，有厚實的美學繪畫能力，善於處理資訊關係的空間美感，因為從小學藝術長大，國高中皆讀美術，大學學習金工產品設計及視傳設計。</p>
+    >研究所學習行銷，曾做過商業行銷、營運等專案，曾參與商業專案，包含餐廳數位行銷、飯店營運，涵蓋市場調查、競業分析、產品研究、成功案例分析、定位目標市場。透過設計問卷、用樞紐分析來分析問卷結果及訪談分析來設計產品及服務。而行銷和UX設計都是要做使用者調查分析，將用戶體驗研究納入用戶需求和動機背後的思維過程很像在行銷數據集中找到有意義的趨勢背後的思維過程。此外，擁有行銷經驗，讓我能夠在商業和使用者體驗的設計中取得平衡。</p>
     <p
       class="about__paragraph"
     >研究所學習行銷，曾做過 商業行銷、營運等專案，曾參與商業專案，包含餐廳數位行銷、飯店營運，涵蓋市場調查、競業分析、產品研究、成功案例分析、定位目標市場，也透過設計問卷、訪談分析 來設計產品及服務。</p>
     <p
       class="about__paragraph"
-    >除此之外，為了方便和工程師溝通、合作，學習程式，在學習的過程中覺得寫程式、建立網頁覺得很有趣和成就感，所以之後也會繼續精進，而這些能力在進入介面設計的領域後能有助於處理新挑戰。</p>
+    >因為覺得介面設計很有趣，設計三個APP，為了方便和工程師溝通、合作，學習程式，在學習的過程中覺得寫程式、切版覺得很有趣，也和工程師合作架設網站。未來規劃在軟體的領域將設計和商業結合，往介面設計領域發展。</p>
     <h2 class="about__listTitle">學歷</h2>
     <div class="about__list">
       <div class="list__part list__part--left">
         <div class="part__item part__item--2017">
           <p class="item__detail">2017/09 - 2018/09</p>
-          <p class="item__detail">Queen Mary</p>
-          <p class="item__detail">University of London</p>
+          <p class="item__detail">Queen Mary University of London</p>
           <p class="item__detail">Marketing MSc</p>
         </div>
         <div class="part__item part__item--2007">
@@ -39,25 +38,30 @@
     <div class="about__skillGroup">
       <div class="skillGroup__skill">
         <img class="skill__image" src="@/assets/about/visual effect.svg" />
-        <p>視覺傳達設計 設計活動網頁、社群素材、 平面文宣、海報、DM、商品包裝</p>
-        <p>技術：PHOTOSHOP、ILLUSTRATOR</p>
+        <div class="skill__textGroup">
+          <p>視覺傳達 設計活動網頁、社群素材、 平面文宣、海報、DM、商品包裝</p>
+          <p>技術：PHOTOSHOP、ILLUSTRATOR</p>
+        </div>
       </div>
       <div class="skillGroup__skill">
         <img class="skill__image" src="@/assets/about/ui.svg" />
-        <p>
-          介面設計
-          設計ＡＰＰ及網頁介面
-        </p>
-        <p>技術：SKETCH、ZEPLIN、INVISION</p>
+        <div class="skill__textGroup">
+          <p>
+            介面
+            設計ＡＰＰ及網頁介面
+          </p>
+          <p>技術：SKETCH、ZEPLIN、INVISION</p>
+        </div>
       </div>
       <div class="skillGroup__skill">
         <img class="skill__image" src="@/assets/about/jewelry.svg" />
-        <p>
-          金工產品設計
-          立體造型設計、珠寶設計
-          技術： Rhino、 蠟雕、 琺瑯、鍛敲
-        </p>
-        <p>技術： Rhino、 蠟雕、 琺瑯、鍛敲</p>
+        <div class="skill__textGroup">
+          <p>
+            金工產品
+            立體造型設計、珠寶設計
+          </p>
+          <p>技術： Rhino、 蠟雕、 琺瑯、鍛敲</p>
+        </div>
       </div>
     </div>
     <h2 class="about__listTitle">工作經歷</h2>
@@ -138,7 +142,7 @@
       }
     }
     .part__item--2017 {
-      margin-top: 20px;
+      margin-top: 10px;
       text-align: right;
     }
     .part__item--2007 {
@@ -150,7 +154,6 @@
     }
     .part__item--2015 {
       margin-top: 140px;
-      text-align: right;
     }
     .part__item--2019 {
       margin-top: 12px;
@@ -230,7 +233,18 @@
     max-width: 839px;
   }
   .about__skillGroup {
-    width: 839px;
+    // width: 839px;
+    justify-content: space-around;
+    .skillGroup__skill {
+      display: flex;
+      max-width: 32%;
+      text-align: left;
+      .skill__textGroup {
+        display: flex;
+        flex-direction: column;
+        margin-left: 8px;
+      }
+    }
   }
 }
 </style>

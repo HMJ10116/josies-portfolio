@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img class="home__banner" src="@/assets/music/banner.png" />
+    <img @click="routeByName('fundora')" class="home__banner" src="@/assets/music/banner.png" />
     <div class="home___vl"></div>
     <h1 class="home__header">01關於我</h1>
     <div class="home__aboutGroup">
@@ -40,41 +40,71 @@
     <div class="home___vl"></div>
     <h1 class="home__header">02介面設計</h1>
     <div class="home__bannerGroup home__bannerGroup--1">
-      <img class="home__banner home__banner--mt16" src="@/assets/music/fundora1.jpg" />
-      <img class="home__banner home__banner--mt16" src="@/assets/yes123/yes123 1.png" />
-      <img class="home__banner home__banner--mt16" src="@/assets/clinic/banner.png" />
+      <img
+        @click="routeByName('fundora')"
+        class="home__banner home__banner--mt16"
+        src="@/assets/music/fundora1.jpg"
+      />
+      <img
+        @click="routeByName('yes123')"
+        class="home__banner home__banner--mt16"
+        src="@/assets/yes123/yes123 1.png"
+      />
+      <img
+        @click="routeByName('clinic')"
+        class="home__banner home__banner--mt16"
+        src="@/assets/clinic/banner.png"
+      />
     </div>
     <div class="home___vl"></div>
     <h1 class="home__header">03視覺設計</h1>
     <div class="home__bannerGroup home__bannerGroup--2">
-      <img class="home__banner home__banner--mt16" src="@/assets/album/1.png" />
-      <img class="home__banner home__banner--mt16" src="@/assets/business/1.png" />
-      <img class="home__banner home__banner--mt16" src="@/assets/chair/1.png" />
+      <img
+        @click="routeByName('album')"
+        class="home__banner home__banner--mt16"
+        src="@/assets/album/1.png"
+      />
+      <img
+        @click="routeByName('business')"
+        class="home__banner home__banner--mt16"
+        src="@/assets/business/1.png"
+      />
+      <img
+        @click="routeByName('chair')"
+        class="home__banner home__banner--mt16"
+        src="@/assets/chair/1.png"
+      />
     </div>
     <div class="home___vl"></div>
     <h1 class="home__header">04金工珠寶設計</h1>
     <div class="home__jewelryGroup">
       <img
+        @click="routeByName('birdSong')"
         class="jewelryGroup__jewelry jewelryGroup__jewelry--birdSong"
         src="@/assets/jewelry/birdSong.png"
       />
       <img
+        @click="routeByName('snake')"
         class="jewelryGroup__jewelry jewelryGroup__jewelry--snake"
         src="@/assets/jewelry/snake.png"
       />
       <img
+        @click="routeByName('jewelryDesign')"
         class="jewelryGroup__jewelry jewelryGroup__jewelry--jewelryDesign"
         src="@/assets/jewelry/jewelryDesign.png"
       />
       <img
+        @click="routeByName('diff')"
         class="jewelryGroup__jewelry jewelryGroup__jewelry--diff"
         src="@/assets/jewelry/diff.png"
       />
       <img
+        @click="routeByName('flowerDance')"
         class="jewelryGroup__jewelry jewelryGroup__jewelry--flowerDance"
         src="@/assets/jewelry/flowerDance.png"
       />
       <img
+        @click="routeByName('paperInk')"
         class="jewelryGroup__jewelry jewelryGroup__jewelry--paperInk"
         src="@/assets/jewelry/paperInk1.png"
       />
@@ -87,6 +117,17 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  methods: {
+    routeByName (routeName) {
+      this.$router.push({
+        name: routeName
+      })
+    }
+  }
+}
+</script>
 <style lang="scss" scoped>
 .home {
   padding: 24px 24px 24px 24px;
@@ -95,6 +136,7 @@
 }
 .home__banner {
   width: 100%;
+  cursor: pointer;
 }
 .home__banner--mt16 {
   margin-top: 16px;
@@ -165,6 +207,7 @@
 .home__jewelryGroup {
   .jewelryGroup__jewelry {
     width: 100%;
+    cursor: pointer;
   }
   .jewelryGroup__jewelry--birdSong {
     grid-area: birdSong;
@@ -315,7 +358,8 @@
     // grid-template-columns: 9fr 9fr 5fr;
     // justify-content: center;
     grid-column-gap: 15px;
-    margin-top: 75px;
+    margin: 75px auto auto auto;
+    max-width: 783px;
     .home__banner {
       margin: 0 5px;
       display: block;
@@ -328,32 +372,10 @@
     grid-template-columns: 9fr 9fr 5fr;
   }
   .home__jewelryGroup {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: unset;
-    .jewelryGroup__jewelry{
-      margin-top: 22px;
-      height: 100%;
-    }
-    .jewelryGroup__jewelry--birdSong{
-      width: 48%;
-    }
-    .jewelryGroup__jewelry--snake{
-      width: 20%;
-    }
-    .jewelryGroup__jewelry--jewelryDesign{
-      width: 24%;
-    }
-     .jewelryGroup__jewelry--diff{
-      width: 23%;
-    }
-     .jewelryGroup__jewelry--flowerDance{
-      width: 23%;
-    }
-     .jewelryGroup__jewelry--paperInk{
-      width: 46%;
-    }
+    grid-template-areas:
+      "birdSong flowerDance snake"
+      "paperInk diff jewelryDesign";
+    max-width: 783px;
   }
 }
 </style>
