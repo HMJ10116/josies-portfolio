@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img @click="routeByName('fundora')" class="home__banner" src="@/assets/music/banner.png" />
+    <img @click="routeByName('fundora')" class="item__image" src="@/assets/music/banner.png" />
     <div class="home___vl"></div>
     <h1 class="home__header">01關於我</h1>
     <div class="home__aboutGroup">
@@ -18,14 +18,12 @@
             <span class="skill__point">SKETCH</span>
           </div>
         </div>
-        <!-- <div class="home___about"> -->
         <div class="about__education">
           <span class="education__title">學歷背景</span>
           <span class="eduction__college">輔大應用美術系金工產品組</span>
           <span class="education__university">QUEEN MARY UNIVERSITY OF LONDON</span>
           <span class="eudcation__major">MSC MARKETING</span>
         </div>
-        <!-- </div> -->
       </div>
     </div>
     <div class="home__intro">
@@ -39,75 +37,127 @@
     </div>
     <div class="home___vl"></div>
     <h1 class="home__header">02介面設計</h1>
-    <div class="home__bannerGroup home__bannerGroup--1">
-      <img
-        @click="routeByName('fundora')"
-        class="home__banner home__banner--mt16"
-        src="@/assets/music/fundora1.jpg"
-      />
-      <img
-        @click="routeByName('yes123')"
-        class="home__banner home__banner--mt16"
-        src="@/assets/yes123/yes123 1.png"
-      />
-      <img
-        @click="routeByName('clinic')"
-        class="home__banner home__banner--mt16"
-        src="@/assets/clinic/banner.png"
-      />
+    <div class="home__imageGroup home__imageGroup--1">
+      <div class="imageGroup__item">
+        <img @click="routeByName('fundora')" class="item__image" src="@/assets/music/fundora1.jpg" />
+        <div class="item__cover">
+          <span class="cover__imageName">FUNDORA MUSIC APP</span>
+        </div>
+      </div>
+      <div class="imageGroup__item">
+        <img
+          @click="routeByName('yes123')"
+          class="item__image item__image--mt16"
+          src="@/assets/yes123/yes123 1.png"
+        />
+        <div class="item__cover">
+          <span class="cover__imageName">YES123 APP REDESIGN</span>
+        </div>
+      </div>
+      <div class="imageGroup__item">
+        <img
+          @click="routeByName('clinic')"
+          class="item__image item__image--mt16"
+          src="@/assets/clinic/banner.png"
+        />
+        <div class="item__cover">
+          <span class="cover__imageName">CLINIC APP DESIGN CONCEPT</span>
+        </div>
+      </div>
     </div>
     <div class="home___vl"></div>
     <h1 class="home__header">03視覺設計</h1>
-    <div class="home__bannerGroup home__bannerGroup--2">
-      <img
-        @click="routeByName('album')"
-        class="home__banner home__banner--mt16"
-        src="@/assets/album/1.png"
-      />
-      <img
-        @click="routeByName('business')"
-        class="home__banner home__banner--mt16"
-        src="@/assets/business/1.png"
-      />
-      <img
-        @click="routeByName('chair')"
-        class="home__banner home__banner--mt16"
-        src="@/assets/chair/1.png"
-      />
+    <div class="home__imageGroup home__imageGroup--2">
+      <div class="imageGroup__item">
+        <img @click="routeByName('album')" class="item__image" src="@/assets/album/1.png" />
+        <div class="item__cover">
+          <span class="cover__imageName">唱片設計</span>
+        </div>
+      </div>
+      <div class="imageGroup__item">
+        <img
+          @click="routeByName('business')"
+          class="item__image item__image--mt16"
+          src="@/assets/business/1.png"
+        />
+        <div class="item__cover">
+          <span class="cover__imageName">商業專案設計</span>
+        </div>
+      </div>
+      <div class="imageGroup__item">
+        <img
+          @click="routeByName('chair')"
+          class="item__image item__image--mt16"
+          src="@/assets/chair/1.png"
+        />
+        <div class="item__cover">
+          <span class="cover__imageName">經典再現--椅展</span>
+        </div>
+      </div>
     </div>
     <div class="home___vl"></div>
     <h1 class="home__header">04金工珠寶設計</h1>
     <div class="home__jewelryGroup">
-      <img
-        @click="routeByName('birdSong')"
-        class="jewelryGroup__jewelry jewelryGroup__jewelry--birdSong"
-        src="@/assets/jewelry/birdSong.png"
-      />
-      <img
-        @click="routeByName('snake')"
-        class="jewelryGroup__jewelry jewelryGroup__jewelry--snake"
-        src="@/assets/jewelry/snake.png"
-      />
-      <img
-        @click="routeByName('jewelryDesign')"
-        class="jewelryGroup__jewelry jewelryGroup__jewelry--jewelryDesign"
-        src="@/assets/jewelry/jewelryDesign.png"
-      />
-      <img
-        @click="routeByName('diff')"
-        class="jewelryGroup__jewelry jewelryGroup__jewelry--diff"
-        src="@/assets/jewelry/diff.png"
-      />
-      <img
-        @click="routeByName('flowerDance')"
-        class="jewelryGroup__jewelry jewelryGroup__jewelry--flowerDance"
-        src="@/assets/jewelry/flowerDance.png"
-      />
-      <img
-        @click="routeByName('paperInk')"
-        class="jewelryGroup__jewelry jewelryGroup__jewelry--paperInk"
-        src="@/assets/jewelry/paperInk1.png"
-      />
+      <div class="jewelryGroup__item">
+        <img
+          @click="routeByName('birdSong')"
+          class="jewelryGroup__jewelry jewelryGroup__jewelry--birdSong"
+          src="@/assets/jewelry/birdSong.png"
+        />
+        <div class="item__cover">
+          <span class="cover__imageName">囀</span>
+        </div>
+      </div>
+      <div class="jewelryGroup__item">
+        <img
+          @click="routeByName('snake')"
+          class="jewelryGroup__jewelry jewelryGroup__jewelry--snake"
+          src="@/assets/jewelry/snake.png"
+        />
+        <div class="item__cover">
+          <span class="cover__imageName">百步蛇</span>
+        </div>
+      </div>
+      <div class="jewelryGroup__item">
+        <img
+          @click="routeByName('jewelryDesign')"
+          class="jewelryGroup__jewelry jewelryGroup__jewelry--jewelryDesign"
+          src="@/assets/jewelry/jewelryDesign.png"
+        />
+        <div class="item__cover">
+          <span class="cover__imageName">珠寶設計繪畫</span>
+        </div>
+      </div>
+      <div class="jewelryGroup__item">
+        <img
+          @click="routeByName('diff')"
+          class="jewelryGroup__jewelry jewelryGroup__jewelry--diff"
+          src="@/assets/jewelry/diff.png"
+        />
+        <div class="item__cover">
+          <span class="cover__imageName">異</span>
+        </div>
+      </div>
+      <div class="jewelryGroup__item">
+        <img
+          @click="routeByName('flowerDance')"
+          class="jewelryGroup__jewelry jewelryGroup__jewelry--flowerDance"
+          src="@/assets/jewelry/flowerDance.png"
+        />
+        <div class="item__cover">
+          <span class="cover__imageName">花舞</span>
+        </div>
+      </div>
+      <div class="jewelryGroup__item">
+        <img
+          @click="routeByName('paperInk')"
+          class="jewelryGroup__jewelry jewelryGroup__jewelry--paperInk"
+          src="@/assets/jewelry/paperInk1.png"
+        />
+        <div class="item__cover">
+          <span class="cover__imageName">紙-墨</span>
+        </div>
+      </div>
     </div>
     <div class="home___vl"></div>
     <h1 class="home__header">05聯絡方式</h1>
@@ -134,12 +184,15 @@ export default {
   color: rgba(131, 131, 131, 0.85);
   position: relative;
 }
-.home__banner {
+.item__image {
   width: 100%;
   cursor: pointer;
 }
-.home__banner--mt16 {
-  margin-top: 16px;
+.home__imageGroup {
+  .imageGroup__item {
+    position: relative;
+    margin-top: 16px;
+  }
 }
 .home___vl {
   margin: 23px auto auto auto;
@@ -247,8 +300,10 @@ export default {
   color: rgba(131, 131, 131, 0.85);
 }
 @media screen and (min-width: 768px) {
-  .home__banner {
+  .item__image {
     max-width: 640px;
+  }
+  .home__imageGroup {
   }
   .home__aboutGroup {
     display: flex;
@@ -298,8 +353,33 @@ export default {
 }
 
 @media screen and (min-width: 1210px) {
-  .home__banner {
-    // max-width: 783px;
+  .home__imageGroup {
+    .imageGroup__item {
+      margin: unset;
+      .item__cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        transition: all 0.38s;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.34);
+          .cover__imageName {
+            opacity: 1;
+          }
+        }
+        .cover__imageName {
+          color: white;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          opacity: 0;
+        }
+      }
+    }
   }
   .home__aboutGroup {
     display: flex;
@@ -353,22 +433,21 @@ export default {
   .home__footer {
     font-size: 16px;
   }
-  .home__bannerGroup {
+  .home__imageGroup {
     display: grid;
     // grid-template-columns: 9fr 9fr 5fr;
     // justify-content: center;
     grid-column-gap: 15px;
     margin: 75px auto auto auto;
     max-width: 783px;
-    .home__banner {
-      margin: 0 5px;
+    .item__image {
       display: block;
     }
   }
-  .home__bannerGroup--1 {
+  .home__imageGroup--1 {
     grid-template-columns: auto auto auto;
   }
-  .home__bannerGroup--2 {
+  .home__imageGroup--2 {
     grid-template-columns: 9fr 9fr 5fr;
   }
   .home__jewelryGroup {
@@ -376,6 +455,32 @@ export default {
       "birdSong flowerDance snake"
       "paperInk diff jewelryDesign";
     max-width: 783px;
+    .jewelryGroup__item {
+      position: relative;
+      .item__cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        transition: all 0.38s;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.34);
+          .cover__imageName {
+            opacity: 1;
+          }
+        }
+        .cover__imageName {
+          color: white;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          opacity: 0;
+        }
+      }
+    }
   }
 }
 </style>

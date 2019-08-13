@@ -39,28 +39,25 @@
       <div class="skillGroup__skill">
         <img class="skill__image" src="@/assets/about/visual effect.svg" />
         <div class="skill__textGroup">
-          <p>視覺傳達 設計活動網頁、社群素材、 平面文宣、海報、DM、商品包裝</p>
-          <p>技術：PHOTOSHOP、ILLUSTRATOR</p>
+          <p class="textGroup__text">視覺傳達</p>
+          <p class="textGroup__text">設計活動網頁、社群素材、 平面文宣、海報、DM、商品包裝</p>
+          <p class="textGroup__text">技術：PHOTOSHOP、ILLUSTRATOR</p>
         </div>
       </div>
       <div class="skillGroup__skill">
         <img class="skill__image" src="@/assets/about/ui.svg" />
         <div class="skill__textGroup">
-          <p>
-            介面
-            設計ＡＰＰ及網頁介面
-          </p>
-          <p>技術：SKETCH、ZEPLIN、INVISION</p>
+          <p class="textGroup__text">介面</p>
+          <p class="textGroup__text">設計ＡＰＰ及網頁介面</p>
+          <p class="textGroup__text">技術：SKETCH、ZEPLIN、INVISION</p>
         </div>
       </div>
       <div class="skillGroup__skill">
         <img class="skill__image" src="@/assets/about/jewelry.svg" />
         <div class="skill__textGroup">
-          <p>
-            金工產品
-            立體造型設計、珠寶設計
-          </p>
-          <p>技術： Rhino、 蠟雕、 琺瑯、鍛敲</p>
+          <p class="textGroup__text">金工產品</p>
+          <p class="textGroup__text">立體造型設計、珠寶設計</p>
+          <p class="textGroup__text">技術： Rhino、 蠟雕、 琺瑯、鍛敲</p>
         </div>
       </div>
     </div>
@@ -179,6 +176,11 @@
     .skill__image {
       margin-bottom: 24px;
     }
+    .skill__textGroup {
+      .textGroup__text {
+        margin: 0;
+      }
+    }
   }
 }
 .about__contact {
@@ -243,6 +245,9 @@
         display: flex;
         flex-direction: column;
         margin-left: 8px;
+        .textGroup__text {
+          margin: 0;
+        }
       }
     }
   }
