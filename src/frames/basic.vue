@@ -25,17 +25,39 @@
           <template v-for="(route,index) in routes">
             <li v-if="route.children" class="nav-item" :key="index">
               <a class="nav-link" @click="openSubMenu(route)">{{route.text}}</a>
-              <!-- <a class="nav-link" href="#">
-                Home
-                <span class="sr-only">(current)</span>
-              </a>-->
             </li>
             <li v-else class="nav-item" :key="index">
               <a class="nav-link" @click="routeByName(route.name)">{{route.text}}</a>
-              <!-- <a class="nav-link" href="#">
-                Home
-                <span class="sr-only">(current)</span>
-              </a>-->
+            </li>
+          </template>
+        </ul>
+      </div>
+    </nav>
+    <nav
+      v-if="isShowFixedMenu"
+      id="navbar"
+      class="navbar navbar-expand-md navbar-light navbar--fixed"
+    >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <template v-for="(route,index) in routes">
+            <li v-if="route.children" class="nav-item" :key="index">
+              <a class="nav-link" @click="openSubMenu(route)">{{route.text}}</a>
+            </li>
+            <li v-else class="nav-item" :key="index">
+              <a class="nav-link" @click="routeByName(route.name)">{{route.text}}</a>
             </li>
           </template>
         </ul>
@@ -131,40 +153,50 @@ export default {
           }
         ]
       },
-      // {
-      //   text: '聯絡方式',
-      //   name: 'contact'
-      // }
     ],
     isSubMenuOpen: false,
-    currentSubMenu: []
+    currentSubMenu: [],
+    // fixed menu
+    isShowFixedMenu: false,
   }),
-  mounted() {
+  mounted () {
     document.addEventListener("click", this.detectClickOutside);
+    document.addEventListener('scroll', this.handleScroll)
   },
-  destroyed() {
-    document.removeEventListener("click", this.detectClickOutside);
+  destroyed () {
+    document.removeEventListener("click", this.detectClickOutside)
+    document.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
-    openSubMenu(route) {
+    openSubMenu (route) {
       this.currentSubMenu = route.children;
       this.isSubMenuOpen = true;
       this.closeMenu();
     },
-    detectClickOutside(event) {
+    detectClickOutside (event) {
       const navbar = document.querySelector("#navbar");
       const isClickInside = navbar.contains(event.target);
       if (!isClickInside) {
         this.closeMenu();
       }
     },
-    routeByName(routeName) {
+    routeByName (routeName) {
       this.$router.push({
         name: routeName
       })
       this.closeMenu();
     },
-    closeMenu() {
+    handleScroll () {
+      console.log(window.scrollY)
+      this.closeMenu()
+      if (window.scrollY >= 95) {
+        // const navbar = document.querySelector("#navbar");
+        this.isShowFixedMenu = true
+      } else {
+        this.isShowFixedMenu = false
+      }
+    },
+    closeMenu () {
       $(".navbar-collapse").collapse("hide");
     }
   }
@@ -198,13 +230,19 @@ export default {
 .navbar {
   background-color: #f6f6f6;
   margin-top: 4px;
-  // top: 0;
-  // width: 100vw;
-  // position: fixed;
   .nav-item {
     cursor: pointer;
     min-width: 15%;
   }
+}
+.navbar--fixed {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  margin: 0;
+  z-index: 20;
 }
 .basic__body {
   padding-bottom: 50px;
@@ -215,6 +253,8 @@ export default {
     justify-content: space-around;
     width: 100%;
   }
+}
+@media screen and (min-width: 1210px) {
 }
 </style>
 

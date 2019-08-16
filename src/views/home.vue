@@ -1,6 +1,56 @@
 <template>
   <div class="home">
-    <img @click="routeByName('fundora')" class="item__image" src="@/assets/music/banner.png" />
+    <!-- <img @click="routeByName('fundora')" class="item__image" src="@/assets/music/banner.png" /> -->
+    <div class="exhibition__glide glide">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          <li class="glide__slide">
+            <div class="slide__content">
+              <img src="@/assets/music/fundora1.jpg" />
+            </div>
+          </li>
+          <li class="glide__slide">
+            <div class="slide__content">
+              <img src="@/assets/clinic/banner.png" />
+            </div>
+          </li>
+          <li class="glide__slide">
+            <div class="slide__content">
+              <img src="@/assets/yes123/yes123 1.png" />
+            </div>
+          </li>
+          <li class="glide__slide">
+            <div class="slide__content">
+              <img src="@/assets/album/1.png" />
+            </div>
+          </li>
+          <li class="glide__slide">
+            <div class="slide__content">
+              <img src="@/assets/jewelry/birdSong.png" />
+            </div>
+          </li>
+          <li class="glide__slide">
+            <div class="slide__content">
+              <img src="@/assets/jewelry/flowerDance.png" />
+            </div>
+          </li>
+          <li class="glide__slide">
+            <div class="slide__content">
+              <img src="@/assets/jewelry/snake.png" />
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- <div class="glide__control" data-glide-el="controls">
+        <button class="control__button control__button--left" data-glide-dir="<">&#60;</button>
+        <button class="control__button control__button--right" data-glide-dir=">">&#62;</button>
+      </div>-->
+      <div class="glide__bullets" data-glide-el="controls[nav]">
+        <template v-for="number in 6">
+          <button class="glide__bullet" :data-glide-dir="`=${number-1}`" :key="number"></button>
+        </template>
+      </div>
+    </div>
     <div class="home___vl"></div>
     <h1 class="home__header">01關於我</h1>
     <div class="home__aboutGroup">
@@ -168,8 +218,38 @@
   </div>
 </template>
 <script>
+import Glide from '@glidejs/glide'
 export default {
+  data: () => ({
+    glide: null,
+  }),
+  mounted () {
+    let config = {
+      type: 'carousel',
+      perView: 1,
+      focusAt: 'center',
+      autoplay: 3000,
+    }
+    if (window.innerWidth >= 1210) {
+      config.perView = 2
+    }
+    this.glide = new Glide('.exhibition__glide', config).mount()
+    window.addEventListener('resize', this.handleGlide)
+  },
+  destroyed () {
+    window.removeEventListener('resize', this.handleGlide)
+  },
   methods: {
+    handleGlide () {
+      if (this.glide) {
+        if (window.innerWidth >= 1210) {
+          this.glide.update({ perView: 2 })
+        } else {
+          this.glide.update({ perView: 1, })
+        }
+      }
+
+    },
     routeByName (routeName) {
       this.$router.push({
         name: routeName
@@ -180,18 +260,63 @@ export default {
 </script>
 <style lang="scss" scoped>
 .home {
-  padding: 24px 24px 24px 24px;
   color: rgba(131, 131, 131, 0.85);
   position: relative;
+  > * {
+    &:not(.glide .home___vl) {
+      padding: 0 24px;
+    }
+  }
 }
-.item__image {
-  width: 100%;
-  cursor: pointer;
+.exhibition__glide {
+  width: 100vw;
+  margin: auto;
+  .glide__track {
+    z-index: 10;
+  }
+  .glide__bullets {
+    bottom: 3em;
+    .glide__bullet {
+      background-color: #d8d8d8;
+      border: 1px solid white;
+    }
+    .glide__bullet--active {
+      background-color: #80cedb;
+    }
+  }
+  .glide__bullet {
+    border: 1px solid black;
+  }
+  .glide__bullet--active {
+    background-color: black;
+  }
+  .glide__slide {
+    .slide__content {
+      min-height: 72vw;
+      display: flex;
+      justify-content: center;
+      max-width: 100vw;
+      overflow: hidden;
+      position: relative;
+      > img {
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: auto;
+      }
+    }
+  }
 }
 .home__imageGroup {
   .imageGroup__item {
     position: relative;
     margin-top: 16px;
+    .item__image {
+      width: 100%;
+      cursor: pointer;
+    }
   }
 }
 .home___vl {
@@ -353,6 +478,13 @@ export default {
 }
 
 @media screen and (min-width: 1210px) {
+  .exhibition__glide {
+    .glide__slide {
+      .slide__content {
+        min-height: 33vw;
+      }
+    }
+  }
   .home__imageGroup {
     .imageGroup__item {
       margin: unset;
