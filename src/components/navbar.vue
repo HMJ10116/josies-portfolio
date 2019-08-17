@@ -1,6 +1,6 @@
 <template>
   <div>
-    <navLightBox v-if="isSubMenuOpen" :isOpen.sync="isSubMenuOpen" :routes="currentSubMenu"></navLightBox>
+    <navLightBox v-if="isLightboxOpen" :isOpen.sync="isLightboxOpen" :routes="currentSubMenu"></navLightBox>
     <nav id="navbar" class="navbar navbar-expand-md navbar-light">
       <button
         class="navbar-toggler"
@@ -18,7 +18,9 @@
         <ul class="navbar-nav">
           <template v-for="(route,index) in routes">
             <li v-if="route.children" class="nav-item" :key="index">
-              <a class="nav-link" @click="openSubMenu(route)">{{route.text}}</a>
+              <navDropdown :routes="route.children">
+                <a class="nav-link" @click="openSubMenu(route)">{{route.text}}</a>
+              </navDropdown>
             </li>
             <li v-else class="nav-item" :key="index">
               <a class="nav-link" @click="routeByName(route.name)">{{route.text}}</a>
@@ -48,7 +50,9 @@
         <ul class="navbar-nav">
           <template v-for="(route,index) in routes">
             <li v-if="route.children" class="nav-item" :key="index">
-              <a class="nav-link" @click="openSubMenu(route)">{{route.text}}</a>
+              <navDropdown :routes="route.children">
+                <a class="nav-link" @click="openSubMenu(route)">{{route.text}}</a>
+              </navDropdown>
             </li>
             <li v-else class="nav-item" :key="index">
               <a class="nav-link" @click="routeByName(route.name)">{{route.text}}</a>
@@ -61,10 +65,12 @@
 </template>
 <script>
 import $ from "jquery";
-import navLightBox from '@/components/navLightBox.vue'
+import navLightBox from './navLightBox.vue'
+import navDropdown from './navDropdown.vue'
 export default {
   components: {
-    navLightBox
+    navLightBox,
+    navDropdown
   },
   data: () => ({
     routes: [
@@ -140,7 +146,7 @@ export default {
         ]
       },
     ],
-    isSubMenuOpen: false,
+    isLightboxOpen: false,
     currentSubMenu: [],
     // fixed menu
     isShowFixedMenu: false,
@@ -156,7 +162,9 @@ export default {
   methods: {
     openSubMenu (route) {
       this.currentSubMenu = route.children;
-      this.isSubMenuOpen = true;
+      if (!window.innerWidth >= 768) {
+        this.isLightboxOpen = true;
+      }
       this.closeMenu();
     },
     detectClickOutside (event) {
@@ -205,6 +213,9 @@ export default {
   z-index: 20;
 }
 @media screen and (min-width: 768px) {
+  .navbar {
+    padding: 0;
+  }
   .navbar-nav {
     display: flex;
     justify-content: space-around;

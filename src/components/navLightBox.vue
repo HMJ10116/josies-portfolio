@@ -25,24 +25,24 @@ export default {
   },
   computed: {
     _isOpen: {
-      get() {
+      get () {
         return this.isOpen
       },
-      set(newValue) {
+      set (newValue) {
         this.$emit('update:isOpen', newValue)
       }
     }
   },
-  mounted() {
+  mounted () {
     setTimeout(() => {
       window.addEventListener('click', this.handleClickOutside)
     }, 100)
   },
-  destroyed() {
+  destroyed () {
     window.removeEventListener('click', this.handleClickOutside)
   },
   methods: {
-    handleClickOutside(event) {
+    handleClickOutside (event) {
       const validArea = this.$refs['navLightBox__list']
       if (!validArea) {
         return;
@@ -52,7 +52,7 @@ export default {
         this._isOpen = false
       }
     },
-    routeToItem(route) {
+    routeToItem (route) {
       this.$router.push({
         name: route.name
       })
