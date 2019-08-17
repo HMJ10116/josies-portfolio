@@ -312,6 +312,31 @@ export default {
       width: 100%;
       cursor: pointer;
     }
+    .item__cover {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      transition: all 0.38s;
+      max-width: 640px;
+      transform: translateX(-50%);
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.34);
+        .cover__imageName {
+          opacity: 1;
+        }
+      }
+      .cover__imageName {
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+      }
+    }
   }
 }
 .home___vl {
@@ -399,6 +424,32 @@ export default {
   }
   .jewelryGroup__jewelry--paperInk {
     grid-area: paperInk;
+  }
+  .jewelryGroup__item {
+    position: relative;
+    .item__cover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      transition: all 0.38s;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.34);
+        .cover__imageName {
+          opacity: 1;
+        }
+      }
+      .cover__imageName {
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+      }
+    }
   }
   margin: 32px auto auto auto;
   display: grid;
@@ -560,8 +611,6 @@ export default {
   }
   .home__imageGroup {
     display: grid;
-    // grid-template-columns: 9fr 9fr 5fr;
-    // justify-content: center;
     grid-column-gap: 15px;
     margin: 75px auto auto auto;
     max-width: 783px;
