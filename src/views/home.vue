@@ -258,7 +258,7 @@ export default {
   color: rgba(131, 131, 131, 0.85);
   position: relative;
   > * {
-    &:not(.glide):not(.home___vl) {
+    &:not(.glide):not(.home___vl):not(.home__jewelryGroup) {
       padding: 0 24px;
     }
   }
