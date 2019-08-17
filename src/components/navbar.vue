@@ -18,9 +18,7 @@
         <ul class="navbar-nav">
           <template v-for="(route,index) in routes">
             <li v-if="route.children" class="nav-item" :key="index">
-              <navDropdown :routes="route.children">
-                <a class="nav-link" @click="openSubMenu(route)">{{route.text}}</a>
-              </navDropdown>
+              <navDropdown :route="route" @clickOnLink="openSubMenu(route)"></navDropdown>
             </li>
             <li v-else class="nav-item" :key="index">
               <a class="nav-link" @click="routeByName(route.name)">{{route.text}}</a>
@@ -50,9 +48,7 @@
         <ul class="navbar-nav">
           <template v-for="(route,index) in routes">
             <li v-if="route.children" class="nav-item" :key="index">
-              <navDropdown :routes="route.children">
-                <a class="nav-link" @click="openSubMenu(route)">{{route.text}}</a>
-              </navDropdown>
+              <navDropdown :route="route" @clickOnLink="openSubMenu(route)"></navDropdown>
             </li>
             <li v-else class="nav-item" :key="index">
               <a class="nav-link" @click="routeByName(route.name)">{{route.text}}</a>
@@ -161,8 +157,11 @@ export default {
   },
   methods: {
     openSubMenu (route) {
+      console.log({
+        route
+      })
       this.currentSubMenu = route.children;
-      if (!window.innerWidth >= 768) {
+      if (window.innerWidth < 768) {
         this.isLightboxOpen = true;
       }
       this.closeMenu();
@@ -210,11 +209,12 @@ export default {
   left: 0;
   width: 100vw;
   margin: 0;
-  z-index: 20;
+  z-index: 40;
 }
 @media screen and (min-width: 768px) {
   .navbar {
     padding: 0;
+    // margin: 2px 0;
   }
   .navbar-nav {
     display: flex;
