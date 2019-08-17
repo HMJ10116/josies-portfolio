@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <!-- <img @click="routeByName('fundora')" class="item__image" src="@/assets/music/banner.png" /> -->
     <div class="exhibition__glide glide">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
@@ -41,10 +40,6 @@
           </li>
         </ul>
       </div>
-      <!-- <div class="glide__control" data-glide-el="controls">
-        <button class="control__button control__button--left" data-glide-dir="<">&#60;</button>
-        <button class="control__button control__button--right" data-glide-dir=">">&#62;</button>
-      </div>-->
       <div class="glide__bullets" data-glide-el="controls[nav]">
         <template v-for="number in 6">
           <button class="glide__bullet" :data-glide-dir="`=${number-1}`" :key="number"></button>
@@ -230,7 +225,7 @@ export default {
       focusAt: 'center',
       autoplay: 3000,
     }
-    if (window.innerWidth >= 1210) {
+    if (window.innerWidth >= 768) {
       config.perView = 2
     }
     this.glide = new Glide('.exhibition__glide', config).mount()
@@ -242,7 +237,7 @@ export default {
   methods: {
     handleGlide () {
       if (this.glide) {
-        if (window.innerWidth >= 1210) {
+        if (window.innerWidth >= 768) {
           this.glide.update({ perView: 2 })
         } else {
           this.glide.update({ perView: 1, })
@@ -263,7 +258,7 @@ export default {
   color: rgba(131, 131, 131, 0.85);
   position: relative;
   > * {
-    &:not(.glide .home___vl) {
+    &:not(.glide):not(.home___vl) {
       padding: 0 24px;
     }
   }
@@ -425,10 +420,15 @@ export default {
   color: rgba(131, 131, 131, 0.85);
 }
 @media screen and (min-width: 768px) {
+  .exhibition__glide {
+    .glide__slide {
+      .slide__content {
+        min-height: 33vw;
+      }
+    }
+  }
   .item__image {
     max-width: 640px;
-  }
-  .home__imageGroup {
   }
   .home__aboutGroup {
     display: flex;
@@ -478,13 +478,6 @@ export default {
 }
 
 @media screen and (min-width: 1210px) {
-  .exhibition__glide {
-    .glide__slide {
-      .slide__content {
-        min-height: 33vw;
-      }
-    }
-  }
   .home__imageGroup {
     .imageGroup__item {
       margin: unset;
