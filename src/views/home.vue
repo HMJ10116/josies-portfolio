@@ -84,28 +84,20 @@
     <h1 class="home__header">02介面設計</h1>
     <div class="home__imageGroup home__imageGroup--1">
       <div class="imageGroup__item">
-        <img @click="routeByName('fundora')" class="item__image" src="@/assets/music/fundora1.jpg" />
-        <div class="item__cover">
+        <img class="item__image" src="@/assets/music/fundora1.jpg" />
+        <div class="item__cover" @click="routeByName('fundora')">
           <span class="cover__imageName">FUNDORA MUSIC APP</span>
         </div>
       </div>
       <div class="imageGroup__item">
-        <img
-          @click="routeByName('yes123')"
-          class="item__image item__image--mt16"
-          src="@/assets/yes123/yes123 1.png"
-        />
-        <div class="item__cover">
+        <img class="item__image item__image--mt16" src="@/assets/yes123/yes123 1.png" />
+        <div class="item__cover" @click="routeByName('yes123')">
           <span class="cover__imageName">YES123 APP REDESIGN</span>
         </div>
       </div>
       <div class="imageGroup__item">
-        <img
-          @click="routeByName('clinic')"
-          class="item__image item__image--mt16"
-          src="@/assets/clinic/banner.png"
-        />
-        <div class="item__cover">
+        <img class="item__image item__image--mt16" src="@/assets/clinic/banner.png" />
+        <div class="item__cover" @click="routeByName('clinic')">
           <span class="cover__imageName">CLINIC APP DESIGN CONCEPT</span>
         </div>
       </div>
@@ -114,28 +106,20 @@
     <h1 class="home__header">03視覺設計</h1>
     <div class="home__imageGroup home__imageGroup--2">
       <div class="imageGroup__item">
-        <img @click="routeByName('album')" class="item__image" src="@/assets/album/1.png" />
-        <div class="item__cover">
+        <img class="item__image" src="@/assets/album/1.png" />
+        <div class="item__cover" @click="routeByName('album')">
           <span class="cover__imageName">唱片設計</span>
         </div>
       </div>
       <div class="imageGroup__item">
-        <img
-          @click="routeByName('business')"
-          class="item__image item__image--mt16"
-          src="@/assets/business/1.png"
-        />
-        <div class="item__cover">
+        <img class="item__image item__image--mt16" src="@/assets/business/1.png" />
+        <div class="item__cover" @click="routeByName('business')">
           <span class="cover__imageName">商業專案設計</span>
         </div>
       </div>
       <div class="imageGroup__item">
-        <img
-          @click="routeByName('chair')"
-          class="item__image item__image--mt16"
-          src="@/assets/chair/1.png"
-        />
-        <div class="item__cover">
+        <img class="item__image item__image--mt16" src="@/assets/chair/1.png" />
+        <div class="item__cover" @click="routeByName('chair')">
           <span class="cover__imageName">經典再現--椅展</span>
         </div>
       </div>
@@ -145,61 +129,55 @@
     <div class="home__jewelryGroup">
       <div class="jewelryGroup__item">
         <img
-          @click="routeByName('birdSong')"
           class="jewelryGroup__jewelry jewelryGroup__jewelry--birdSong"
           src="@/assets/jewelry/birdSong.png"
         />
-        <div class="item__cover">
+        <div class="item__cover" @click="routeByName('birdSong')">
           <span class="cover__imageName">囀</span>
         </div>
       </div>
       <div class="jewelryGroup__item">
         <img
-          @click="routeByName('snake')"
           class="jewelryGroup__jewelry jewelryGroup__jewelry--snake"
           src="@/assets/jewelry/snake.png"
         />
-        <div class="item__cover">
+        <div class="item__cover" @click="routeByName('snake')">
           <span class="cover__imageName">百步蛇</span>
         </div>
       </div>
       <div class="jewelryGroup__item">
         <img
-          @click="routeByName('jewelryDesign')"
           class="jewelryGroup__jewelry jewelryGroup__jewelry--jewelryDesign"
           src="@/assets/jewelry/jewelryDesign.png"
         />
-        <div class="item__cover">
+        <div class="item__cover" @click="routeByName('jewelryDesign')">
           <span class="cover__imageName">珠寶設計繪畫</span>
         </div>
       </div>
       <div class="jewelryGroup__item">
         <img
-          @click="routeByName('diff')"
           class="jewelryGroup__jewelry jewelryGroup__jewelry--diff"
           src="@/assets/jewelry/diff.png"
         />
-        <div class="item__cover">
+        <div class="item__cover" @click="routeByName('diff')">
           <span class="cover__imageName">異</span>
         </div>
       </div>
       <div class="jewelryGroup__item">
         <img
-          @click="routeByName('flowerDance')"
           class="jewelryGroup__jewelry jewelryGroup__jewelry--flowerDance"
           src="@/assets/jewelry/flowerDance.png"
         />
-        <div class="item__cover">
+        <div class="item__cover" @click="routeByName('flowerDance')">
           <span class="cover__imageName">花舞</span>
         </div>
       </div>
       <div class="jewelryGroup__item">
         <img
-          @click="routeByName('paperInk')"
           class="jewelryGroup__jewelry jewelryGroup__jewelry--paperInk"
           src="@/assets/jewelry/paperInk1.png"
         />
-        <div class="item__cover">
+        <div class="item__cover" @click="routeByName('paperInk')">
           <span class="cover__imageName">紙-墨</span>
         </div>
       </div>
