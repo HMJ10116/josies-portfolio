@@ -381,6 +381,7 @@ export default {
   }
 }
 .home__jewelryGroup {
+  padding: 0 24px;
   .jewelryGroup__jewelry {
     width: 100%;
     cursor: pointer;
