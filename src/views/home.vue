@@ -532,29 +532,6 @@ export default {
   .home__imageGroup {
     .imageGroup__item {
       margin: unset;
-      .item__cover {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        cursor: pointer;
-        transition: all 0.38s;
-        &:hover {
-          background-color: rgba(0, 0, 0, 0.34);
-          .cover__imageName {
-            opacity: 1;
-          }
-        }
-        .cover__imageName {
-          color: white;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          opacity: 0;
-        }
-      }
     }
   }
   .home__aboutGroup {
@@ -574,9 +551,9 @@ export default {
       .textArea__skill {
         font-size: 16px;
         text-align: left;
-        position: absolute;
-        top: 0;
-        right: 0;
+        // position: absolute;
+        // top: 0;
+        // right: 0;
         .skill__points {
           text-align: center;
           justify-content: flex-start;
