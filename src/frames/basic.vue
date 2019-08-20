@@ -3,9 +3,9 @@
     <div class="basic__header">
       <h1 class="header__name">
         JOSIE HO
-        <hr class="name__decoration" />
+        <img class="header__logo" src="@/assets/navigation/logo.png">
+        PORTFOLIO
       </h1>
-      <h1 class="header__portfolio">PORTFOLIO</h1>
     </div>
     <navbar></navbar>
     <div class="basic__body">
@@ -32,19 +32,20 @@ export default {
   font-weight: 500;
   flex-direction: column;
   text-align: left;
-  width: 125px;
+  width: 280px;
   .header__name {
-    font-size: 14px;
+    font-size: 18px;
     display: flex;
     white-space: nowrap;
-    .name__decoration {
-      width: 28px;
-      border-bottom: 3px solid #62c3d3;
+    padding-top: 50px;
+    padding-bottom: 15px;
+  }
+  .header__logo {
+      width: 36px;
+      height: 35px;
+      margin-right: 7px;
+      margin-top: -15px;
     }
-  }
-  .header__portfolio {
-    font-size: 14px;
-  }
 }
 .basic__body {
   padding-bottom: 50px;
