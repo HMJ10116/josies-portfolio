@@ -142,6 +142,8 @@ export default {
 .exhibition__textArea {
   font-size: 12px;
   text-align: left;
+  margin: auto;
+  width: 273px;
   color: #979797;
   .textArea__description {
     // margin: 0px;

@@ -5,7 +5,7 @@
         <ul class="glide__slides">
           <li class="glide__slide">
             <div class="slide__content">
-              <img src="@/assets/jewelry/birdSong.png" />
+              <img class="content__image" src="@/assets/jewelry/birdSong.png" />
             </div>
           </li>
         </ul>
