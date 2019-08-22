@@ -45,7 +45,7 @@
       <div class="skillGroup__skill">
         <img class="skill__image" src="@/assets/about/ui.svg" />
         <div class="skill__textGroup">
-          <p class="textGroup__text">介面</p>
+          <p class="textGroup__text">介面設計</p>
           <p class="textGroup__text">設計ＡＰＰ及網頁介面</p>
           <p class="textGroup__text">技術：SKETCH、ZEPLIN、INVISION</p>
         </div>
