@@ -111,6 +111,8 @@ export default {
   font-size: 12px;
   text-align: left;
   color: #979797;
+  margin: auto;
+  width: 273px;
   .textArea__description {
     // margin: 0px;
   }

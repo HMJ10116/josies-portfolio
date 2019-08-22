@@ -2,21 +2,20 @@
   padding: 24px;
 }
 .jewelry__glide {
-  width: calc(100vw - 48px);
+  width: 273px;
   margin: auto;
   .glide__track {
     z-index: 10;
   }
   .glide__control {
     position: absolute;
-    top: calc(50% - 46px);
+    top: calc(50% - 50px);
     display: flex;
     justify-content: space-between;
     width: 100%;
     .control__button {
       height: 75px;
       font-size: 12px;
-      width: 24px;
       background-color: #606060;
       color: white;
       position: absolute;
@@ -38,27 +37,27 @@
   }
 }
 .slide__content {
-  min-height: calc((100vw - 48px) * 0.7);
+  min-height: 250px;
   display: flex;
   justify-content: center;
   max-width: 100vw;
   overflow: hidden;
   position: relative;
-  .content__image {
-    height: 100%;
+  > img {
+    // height: 100%;
+    width: 100%;
     display: block;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-  }
-  .content__image--adaptWidth {
-    height: unset;
-    width: 100%;
+    margin: auto;
   }
 }
 .jewelry__textArea {
   font-size: 12px;
   text-align: left;
+  margin: auto;
+  width: 273px;
   color: #979797;
   .textArea__description {
     // margin: 0px;
